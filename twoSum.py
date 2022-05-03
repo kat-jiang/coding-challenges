@@ -14,14 +14,14 @@ def twoSum(nums: List[int], target: int) -> List[int]:
     >>> twoSum([3,3], 6)
     [0, 1]
     """
-    sum_dict={} # {num:index}
     for index, num in enumerate(nums):
+        sum_dict={} # {num:index}
         diff = target - num
         if diff in sum_dict:
             return [sum_dict.get(diff), index]
         sum_dict[num] = index
-    else:
-        return []
+
+    return []
 
 #Runtime complexity: O(n)
 #Spacetime complexity:O(n)
