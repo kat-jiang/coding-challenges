@@ -22,6 +22,9 @@ def contains_duplicate(nums: List[int]) -> bool:
 
     return False
 
+#Runtime complexity: O(n)
+#Spacetime complexity:O(n)
+
 # call the testmod function
 if __name__ == '__main__':
     testmod(name ='max_profit', verbose = True)
