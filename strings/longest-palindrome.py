@@ -39,8 +39,8 @@ def longest_palindrome(s: str) -> str:
 
     return longest_palindrome
 
-#Runtime complexity: O(n^3?)
-#Spacetime complexity:O(n)
+#Runtime complexity:
+#Spacetime complexity:
 
 
 class TestHandler(unittest.TestCase):
