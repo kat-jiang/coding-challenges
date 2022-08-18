@@ -6,27 +6,21 @@
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        #initialize return list
-        #base case: when no more nodes, return
-        #create a list for each level to append nodes
-        #recurse into left and right, append nodes to list
-        #return levels list
-        
-        levels = []
+        res = []
 
-        def dfs(root, level=0):
+        q = collections.deque()
+        q.append(root)
         
-            if len(levels) <= level:
-                levels.append([])
-                
-            levels[level].append(root.val)
-            
-            if root.left:
-                dfs(root.left, level + 1)
-            if root.right:
-                dfs(root.right, level + 1)
-        
-        if root:
-            dfs(root)
-        
-        return levels
+        while q:
+            level_len = len(q)
+            level = []
+            for i in range(level_len):
+                node = q.popleft()
+                if node:
+                    level.append(node.val)
+                    q.append(node.left)
+                    q.append(node.right)
+            if level:
+                res.append(level)
+
+        return res
