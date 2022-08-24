@@ -18,11 +18,11 @@ class Solution:
         if not root:
             return None
         
+        #set left as right and right as left
+        root.left, root.right = root.right, root.left 
+        
         #call recursion on left and right
         self.invertTree(root.left)
         self.invertTree(root.right)
-            
-        #set left as right and right as left
-        root.left, root.right = root.right, root.left 
         
         return root
