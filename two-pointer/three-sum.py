@@ -23,7 +23,7 @@ def three_sum(nums: List[int]) -> List[List[int]]:
     nums.sort()
 
     #iterate through nums and get target(-num)
-    #do not want duplicate triplets so pass if current value is equal to previous index value
+    #do not want duplicate triplets so pass if current value is equal to previous index value (since this is sorted)
     #left pointer will increment to get to target
     #right pointer will decrement to get to target
     #while loop inside, breaks when l = r (nested loop -> O(n^2) runtime)
