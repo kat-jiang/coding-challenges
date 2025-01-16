@@ -1,3 +1,8 @@
+# have left and right pointer
+# variable to save max profit
+# if left < right (means profit), calculate profit
+# if not, set left to right, reason for this is we want to set left to the lowest price
+# increment right counter to check next price
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         l, r = 0, 1
