@@ -9,14 +9,18 @@ class Solution:
         res = 0
         
         def dfs(root):
-            nonlocal res
+            nonlocal res # ints in python are immutable, so we need to use nonlocal to modify res
             if not root:
-                return -1
+                return 0
+            
+            # Compute left and right subtree heights
             left = dfs(root.left)
             right = dfs(root.right)
             
-            res = max(res, 2 + left + right)
+            # Update the maximum diameter
+            res = max(res, left + right)
             
+            # Return the height of the current node
             return max(left, right) + 1
         
         dfs(root)
