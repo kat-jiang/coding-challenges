@@ -16,7 +16,7 @@ class Solution:
         top, bottom = 0, ROWS - 1
         
         while top <= bottom:
-            mid = (top + bottom) // 2
+            mid = (top + bottom) // 2 #rounds down to nearst int
             if target > matrix[mid][-1]:
                 top = mid + 1
             elif target < matrix[mid][0]:
