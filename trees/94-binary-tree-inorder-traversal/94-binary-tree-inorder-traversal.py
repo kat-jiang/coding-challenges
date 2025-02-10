@@ -8,21 +8,18 @@ class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         #inorder traversal: traverse left, root, right
         #recursive solution
-#         res = []
-        
-#         def inorder(node, res):
-#             if not node:
-#                 return
-#             inorder(node.left, res)
+            # result = []
             
-#             res.append(node.val)
-            
-#             inorder(node.right, res)
-            
-#             return res
-        
-#         return inorder(root, res)
-        
+            # def dfs(node):
+            #     if not node:
+            #         return
+            #     dfs(node.left)      # Visit left subtree
+            #     result.append(node.val)  # Visit node
+            #     dfs(node.right)     # Visit right subtree
+
+            # dfs(root)
+            # return result
+                
         #iterative solution
         
         res = []
@@ -32,10 +29,10 @@ class Solution:
         while curr or stack:
             while curr:
                 stack.append(curr)
-                curr =  curr.left
+                curr =  curr.left # Move to leftmost node
                 
-            curr = stack.pop()
+            curr = stack.pop() # Process the node
             res.append(curr.val)
-            curr = curr.right
+            curr = curr.right # Move to right subtree
             
         return res
