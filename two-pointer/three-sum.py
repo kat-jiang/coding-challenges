@@ -61,3 +61,37 @@ class TestHandler(unittest.TestCase):
 testclass = unittest.main(exit=False)
 if testclass.result.wasSuccessful():
     print("Test pass -- woohoo!")
+
+def threeSum(nums):
+    nums.sort()  # Sort the array
+    result = []
+    
+    for i in range(len(nums) - 2):
+        # Skip the same element to avoid duplicates
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        
+        left, right = i + 1, len(nums) - 1
+        
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+            
+            if total == 0:  # We found a valid triplet
+                result.append([nums[i], nums[left], nums[right]])
+                
+                # Skip duplicates for the left pointer
+                while left < right and nums[left] == nums[left + 1]:
+                    left += 1
+                # Skip duplicates for the right pointer
+                while left < right and nums[right] == nums[right - 1]:
+                    right -= 1
+                
+                # Move the pointers after finding a valid triplet
+                left += 1
+                right -= 1
+            elif total < 0:
+                left += 1  # We need a larger sum, move the left pointer to the right
+            else:
+                right -= 1  # We need a smaller sum, move the right pointer to the left
+    
+    return result
