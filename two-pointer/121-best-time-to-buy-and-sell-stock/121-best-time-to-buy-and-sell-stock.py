@@ -17,3 +17,19 @@ class Solution:
             r += 1
         
         return max_profit
+    
+    def maxProfit(prices):
+        min_price = float('inf')  # Start with a very large number
+        max_profit = 0  # No profit at the start
+        
+        for price in prices:
+            # Update the minimum price encountered so far
+            min_price = min(min_price, price)
+            
+            # Calculate profit if we sell at the current price
+            profit = price - min_price
+            
+            # Update the maximum profit
+            max_profit = max(max_profit, profit)
+        
+        return max_profit
