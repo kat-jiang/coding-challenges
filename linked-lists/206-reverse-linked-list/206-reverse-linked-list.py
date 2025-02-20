@@ -16,6 +16,14 @@ class Solution:
         return prev
     
     def reverseList(head: ListNode) -> ListNode:
+        # 1  ->  2  ->  3  ->  4
+        # prev, curr, next
+        # 1  <-  2      3  ->  4
+        #       prev, curr, next
+        # save next node
+        # make curr.next into prev
+        # make curr to prev
+        # make next to curr
         prev = None  # prev pointer, initially pointing to None
         current = head  # current pointer, initially pointing to the head of the list
         
