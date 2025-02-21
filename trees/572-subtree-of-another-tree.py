@@ -49,9 +49,9 @@ class Solution:
 
 # Time & Space Complexity
 # Time Complexity: O(m * n)
-# isSameTree takes O(m) in the worst case.
-# We call isSameTree at every node in root (up to n nodes).
-# Worst case: O(m * n) when subRoot is compared at every node in root.
+#   isSameTree takes O(m) in the worst case.
+#   We call isSameTree at every node in root (up to n nodes).
+#   Worst case: O(m * n) when subRoot is compared at every node in root.
 # Space Complexity: O(h)
-# Recursion depth depends on tree height h.
-# Balanced tree: O(log n), Skewed tree: O(n).
+#   Recursion depth depends on tree height h.
+#   Balanced tree: O(log n), Skewed tree: O(n).
