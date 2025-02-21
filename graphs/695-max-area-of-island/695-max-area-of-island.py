@@ -21,7 +21,8 @@ class Solution:
         
         for row in range(rows):
             for col in range(cols):
-                area = dfs(row, col)
-                max_area = max(area, max_area)
+                if grid[row][col] == 1 and (row, col) not in visited:
+                    area = dfs(row, col)
+                    max_area = max(area, max_area)
                 
         return max_area

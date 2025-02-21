@@ -28,5 +28,5 @@ class Solution:
         
         for row in range(rows):
             for col in range(cols):
-                if grid[row][col] == 1:
+                if grid[row][col] == 1 and (row, col) not in visited:
                     return dfs(row, col)
