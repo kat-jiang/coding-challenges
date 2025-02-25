@@ -8,7 +8,7 @@ class Solution:
         hashset = set(nums)
         longest = 0
         
-        for num in nums:
+        for num in hashset: #iterate through hashset instead to remove duplicates
             if (num - 1) not in hashset:
                 curr_len = 1
                 while (num + curr_len) in hashset:
@@ -16,3 +16,6 @@ class Solution:
                 longest = max(curr_len, longest)
         
         return longest
+    
+# Time complexity: O(n)
+# Space complexity: O(n)
