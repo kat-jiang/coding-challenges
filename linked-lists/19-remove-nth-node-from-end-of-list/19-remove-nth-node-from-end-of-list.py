@@ -6,7 +6,9 @@
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         # dummy -> 1 -> 2 -> 3 -> 4 -> 5 -> null   n=2
-        #   l           r
+        #   l      r
+        # dummy -> 1 -> 2 -> 3 -> 4 -> 5 -> null   n=2
+        #   l                r
         # dummy -> 1 -> 2 -> 3 -> 4 -> 5 -> null   n=2
         #                    l              r
         #use 2 pointers, l and r, distance between l and r is n + 1
